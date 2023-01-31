@@ -1,5 +1,10 @@
 from django.db import models
 
-class person(models.model):
-    prenom= models.charfield(max_length=30)
-    nom1= models.charfield(max_length=30)
+class Article(models.Model):
+    pub_date = models.DateField()
+    headtline = models.charField(max_length=200)
+    content = models.TextField()
+    Reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE)
+
+    def __file__(self):
+        return self.headtline
