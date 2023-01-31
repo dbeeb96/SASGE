@@ -10,9 +10,9 @@ class Reporter(models.Model):
 
 class Article(models.Model):
     pub_date = models.DateField()
-    headtline = models.CharField(max_length=200)
+    headline = models.CharField(max_length=200)
     content = models.TextField()
     reporter = models.ForeignKey(Reporter, on_delete=models.CASCADE)
 
     def __file__(self):
-        return self.headtline
+        return self.headline
