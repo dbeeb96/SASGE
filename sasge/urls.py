@@ -7,5 +7,7 @@ from comptes.views import loginPage
 urlpatterns = [
     path('', include('base1.urls')),
     path('admin/', admin.site.urls),
-    path('login/', loginPage, name='login')
+    path('login/', loginPage, name='login'),
+    path('register/', views.SignupView, name="register"),
+
 ]

@@ -1,8 +1,8 @@
-from django.contrib.auth import authenticate
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
 
-from .forms import LoginForm
+from .forms import LoginForm, SignupForm # ,UpdateDefaultProfile,UpdateCustomProfile
 
 
 # Create your views here.
@@ -18,6 +18,17 @@ def loginPage(request):
         user = authenticate(request, email=email, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('base')
+            return redirect('base1')
+
     context = {'form': form}
     return render(request, 'comptes/login.html', context)
+
+
+# formulaire d'inscription
+
+
+def SignupView(request):
+    form = SignupForm()
+
+    context = {'form': form}
+    return render(request, 'comptes/register.html', context)
