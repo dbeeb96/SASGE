@@ -18,13 +18,10 @@
 
                                         <form method="POST" class="justify-content-center" enctype="multipart/form-data" >
                                                 {% csrf_token %}
-                                                {{form|crispy}}
+                                               {{form|crispy}}
                                             <input type="submit" name="submit" value="S'inscrire" class="btn btn-block btn-success">
-
                                         </form>
-
                                     </div>
-
 
                                 </div>
                             </div>
@@ -44,9 +41,11 @@
 		background-size : cover;
 		background-repeat : no-repeat
 	  }
+
   main{
         opacity: .8
        }
+
     </style>
 {% endblock %}
 
