@@ -15,7 +15,8 @@ def loginPage(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         email = request.POST.get('email')
-        user = authenticate(request, email=email, username=username, password=password)
+        users = request.POST.get('users')
+        user = authenticate(request, email=email, username=username, password=password, users=users)
         if user is not None:
             login(request, user)
             return redirect('base1')
