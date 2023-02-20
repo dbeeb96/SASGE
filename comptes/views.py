@@ -13,10 +13,13 @@ def loginPage(request):
 
     if request.method == 'POST':
         username = request.POST.get('username')
+        prenom = request.POST.geet('prenom')
+        nom = request.POST.get('nom')
         password = request.POST.get('password')
         email = request.POST.get('email')
         users = request.POST.get('users')
-        user = authenticate(request, email=email, username=username, password=password, users=users)
+
+        user = authenticate(request, email=email, username=username, prenom=prenom,  nom=nom, password=password, users=users)
         if user is not None:
             login(request, user)
             return redirect('base1')

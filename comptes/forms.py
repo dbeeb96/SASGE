@@ -27,15 +27,27 @@ CHOICES = (
 
 class SignupForm(UserCreationForm):
     email = forms.EmailField(required=True)
+
     username = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Entrer votre nom d'utilisateur :"})
                                , label='Nom d\'utilisateur')
+
+    prenom = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Entrer votre nom :"})
+                               , label=' Entrer votre prenom')
+
+    nom = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Entrer votre nom :"})
+                               , label=' Entrer votre nom')
+
+
     email = forms.EmailField(widget=forms.TextInput(attrs={"placeholder": "Enter votre mot de passe : "}))
+
     password1 = forms.CharField \
         (widget=forms.TextInput(attrs={"placeholder": "Entrer votre mot de passe", 'type': 'password'}),
          label=_("Mot de passe"))
+
     password2 = forms.CharField \
         (widget=forms.TextInput(attrs={"placeholder": "Confirmer votre mot de passe", 'type': 'password'}),
          label=_("Confirmer le mot de passe"))
+
     users = forms.ChoiceField(choices=CHOICES, label='Utilisateurs')
     # La classe Meta
 
@@ -44,6 +56,8 @@ class SignupForm(UserCreationForm):
         fields = (
 
             'username',
+            'prenom',
+            'nom',
             'email',
             'password1',
             'password2',
