@@ -48,7 +48,7 @@ class SignupForm(UserCreationForm):
         (widget=forms.TextInput(attrs={"placeholder": "Confirmer votre mot de passe", 'type': 'password'}),
          label=_("Confirmer le mot de passe"))
 
-    users = forms.ChoiceField(choices=CHOICES, label='Utilisateurs')
+    users = forms.ChoiceField(choices=CHOICES, label='Directions')
     # La classe Meta
 
     class Meta:
